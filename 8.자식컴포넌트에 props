@@ -53,3 +53,26 @@ function Modal(props) {
 이제 글제목 누르면 해당 글제목이 모달창에 뜨게 한번 해보셈
 
 
+# 5. 숙제 정답 (2)
+나는 이렇게함
+
+먼저 모달창이 무슨상태인지 지정하는 스테이트 하나 만듬
+```
+const [modalInfo, setmodalInfo] = useState(0)
+```
+이제 글제목 누르면 발생하는 이벤트에 모달 스테이트 바뀌는 이벤트를 추가할건데 이 작업은 일단 map으로 코드 반복좀 줄여야함
+```
+onClick={function () {
+                  setmodalInfo(i)
+                  setmodal(!modal)
+                }}
+```
+```
+{modal == true ? <Modal 글제목={글제목[modalInfo]} set글제목={set글제목}></Modal> : null}
+```
+컴포넌트에 props도 보내주고
+
+모달 컴포넌트에는 난 그냥 해당하는 글제목 하나만 받아왔으니까 다음과 같이 쓰면 끝~
+```
+<h4>{props.글제목}</h4>
+```
