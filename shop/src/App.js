@@ -8,8 +8,11 @@ import Detail from './components/Detail';
 import { Routes, Route, Link } from 'react-router-dom'
 import { useNavigate, Outlet } from 'react-router-dom';
 
+
 function App() {
   const [shoes, setshoes] = useState(data)
+
+
   return (
     <div>
 
