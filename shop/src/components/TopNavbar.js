@@ -14,6 +14,9 @@ function TopNavbar() {
                     <Nav.Link onClick={function() {
                         navigate('/about')
                     }}>어바웃</Nav.Link>
+                    <Nav.Link onClick={function() {
+                        navigate('/cart')
+                    }}>장바구니</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
