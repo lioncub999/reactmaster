@@ -8,8 +8,9 @@ let cart = createSlice({
         { id: 2, name: 'Grey Yordan', count: 1 }
     ],
     reducers : {
-        increasePdCnt(state) {
-            console.log(state.find(id == 0))
+        increasePdCnt(state, a) {
+            let index1 = state.findIndex((data) => data.id == a.payload)
+            state[index1].count += 1
         }
     }
 })

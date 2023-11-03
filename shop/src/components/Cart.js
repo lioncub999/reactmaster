@@ -5,10 +5,9 @@ import { increasePdCnt } from "./../store/cartSlice"
 import { useEffect, useState } from "react";
 
 
-
 function Cart() {
     
-    let state = useSelector((state) => state)
+    let cartList = useSelector((state) => state.cart)
     let dispatch = useDispatch()
     const [increaseAmount, setIncreaseAmount] = useState('')
 
@@ -25,14 +24,14 @@ function Cart() {
                 </thead>
                 <tbody>
                     {
-                        state.cart.map(function (a, i) {
+                        cartList.map(function (a, i) {
                             return (
                                 <tr key={i}>
                                     <td>1</td>
-                                    <td>{state.cart[i].name}</td>
-                                    <td>{state.cart[i].count}</td>
+                                    <td>{cartList[i].name}</td>
+                                    <td>{cartList[i].count}</td>
                                     <td><button onClick={function() {
-                                        dispatch(increasePdCnt())
+                                        dispatch(increasePdCnt(cartList[i].id))
                                     }}>증가</button></td>
                                 </tr>
                             )
